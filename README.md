@@ -9,7 +9,7 @@ resource "aws_secretsmanager_secret" "example" {
   provider = aws.ca-central-1
 
   name     = "example"
-  description = "This is a demo of the Invicton-Labs/secret-replicas/aws module!"
+  description = "This is a demo of the Kalepa/secret-replicas/aws module!"
 
   replica {
     region = "us-west-2"
@@ -21,7 +21,7 @@ resource "aws_secretsmanager_secret" "example" {
 }
 
 module "secret_replicas" {
-    source = "Invicton-Labs/secret-replicas/aws"
+    source = "Kalepa/secret-replicas/aws"
 
     // Pass the entire resource into this module
     secret = aws_secretsmanager_secret.example
@@ -45,7 +45,7 @@ Outputs:
 secret_replicas = tomap({
   "ca-central-1" = {
     "arn" = "arn:aws:secretsmanager:ca-central-1:170970691995:secret:example-gfJ8fE"
-    "description" = "This is a demo of the Invicton-Labs/secret-replicas/aws module!"
+    "description" = "This is a demo of the Kalepa/secret-replicas/aws module!"
     "is_replica" = false
     "kms_key_id" = "alias/aws/secretsmanager"
     "name" = "example"
@@ -58,7 +58,7 @@ secret_replicas = tomap({
   }
   "eu-north-1" = {
     "arn" = "arn:aws:secretsmanager:eu-north-1:170970691995:secret:example-gfJ8fE"
-    "description" = "This is a demo of the Invicton-Labs/secret-replicas/aws module!"
+    "description" = "This is a demo of the Kalepa/secret-replicas/aws module!"
     "is_replica" = true
     "kms_key_id" = "alias/aws/secretsmanager"
     "name" = "example"
@@ -71,7 +71,7 @@ secret_replicas = tomap({
   }
   "us-west-2" = {
     "arn" = "arn:aws:secretsmanager:us-west-2:170970691995:secret:example-gfJ8fE"
-    "description" = "This is a demo of the Invicton-Labs/secret-replicas/aws module!"
+    "description" = "This is a demo of the Kalepa/secret-replicas/aws module!"
     "is_replica" = true
     "kms_key_id" = "alias/aws/secretsmanager"
     "name" = "example"
