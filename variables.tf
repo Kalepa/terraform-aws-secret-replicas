@@ -28,7 +28,7 @@ variable "secret" {
       status         = string
       status_message = string
     }))
-    rotation_enabled = bool
+    rotation_enabled = optional(bool, false)
     tags             = map(string)
     tags_all         = map(string)
   })
